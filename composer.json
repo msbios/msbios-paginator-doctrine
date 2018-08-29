@@ -25,12 +25,11 @@
   },
   "require": {
     "zendframework/zend-paginator": "^2.8",
-    "msbios/msbios": "^1.0"
+    "msbios/doctrine": "^1.0"
   },
   "require-dev": {
     "msbios/debug": "^1.0",
-    "msbios/test": "^1.0",
-    "msbios/doctrine": "^1.0"
+    "msbios/test": "^1.0"
   },
   "scripts": {
     "cs-check": "phpcs",

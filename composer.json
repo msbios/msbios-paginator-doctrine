@@ -1,0 +1,56 @@
+{
+  "name": "msbios/paginator-doctrine",
+  "description": "MSBios paginator Doctrine",
+  "license": "GPL",
+  "keywords": [
+    "php"
+  ],
+  "homepage": "https://github.com/msbios/msbios-paginator-doctrine",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Judzhin Miles",
+      "email": "info@msbios.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MSBios\\Paginator\\Doctrine\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MSBiosTest\\Paginator\\Doctrine\\": "tests/"
+    }
+  },
+  "require": {
+    "zendframework/zend-paginator": "^2.8",
+    "msbios/msbios": "^1.0"
+  },
+  "require-dev": {
+    "msbios/debug": "^1.0",
+    "msbios/test": "^1.0",
+    "msbios/doctrine": "^1.0"
+  },
+  "scripts": {
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "test": [
+      "@cs-check",
+      "phpunit --colors=always"
+    ],
+    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+    "upload-coverage": "coveralls -v",
+    "cache": [
+      "rm -Rf data/cache/*.php",
+      "rm -Rf data/cache/*.dat",
+      "rm -Rf data/logs/*.log"
+    ],
+    "commit": "git add . && git commit -a -m \"Intermedaite commit\" && git push"
+  },
+  "extra": {
+    "zf": {
+      "component": "MSBios\\Paginator\\Doctrine"
+    }
+  }
+}

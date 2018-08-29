@@ -4,17 +4,18 @@
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
 
-namespace MSBios\Paginator;
+namespace MSBios\Paginator\Doctrine;
 
 use MSBios\ModuleInterface;
 use Zend\Loader\AutoloaderFactory;
 use Zend\Loader\StandardAutoloader;
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 
 /**
  * Class Module
- * @package MSBios\Paginator
+ * @package MSBios\Paginator\Doctrine
  */
-class Module implements ModuleInterface
+class Module implements ModuleInterface, AutoloaderProviderInterface
 {
     /** @const VERSION */
     const VERSION = '1.0.0';

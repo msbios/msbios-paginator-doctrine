@@ -3,15 +3,15 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-namespace MSBios\Paginator\Adapter;
+namespace MSBios\Paginator\Doctrine\Adapter;
 
 use Doctrine\ORM\QueryBuilder;
-use Doctrine\ORM\Tools\Pagination\Paginator AS ORMPaginator;
-use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator AS DoctrineAdapter;
+use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 
 /**
  * Class QueryBuilderPaginator
- * @package MSBios\Paginator\Adapter
+ * @package MSBios\Paginator\Doctrine\Adapter
  */
 class QueryBuilderPaginator extends DoctrineAdapter
 {
@@ -30,8 +30,8 @@ class QueryBuilderPaginator extends DoctrineAdapter
         $sort = null,
         $order = null,
         $group = null,
-        $having = null)
-    {
+        $having = null
+    ) {
 
         if ($where) {
             $queryBuilder->where($where);
@@ -51,5 +51,4 @@ class QueryBuilderPaginator extends DoctrineAdapter
 
         parent::__construct(new ORMPaginator($queryBuilder));
     }
-
 }

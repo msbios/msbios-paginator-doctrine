@@ -1,7 +1,7 @@
 {
   "name": "msbios/paginator-doctrine",
   "description": "MSBios paginator Doctrine",
-  "license": "GPL",
+  "license": "MIT",
   "keywords": [
     "php"
   ],

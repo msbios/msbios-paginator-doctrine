@@ -20,25 +20,34 @@ class QueryBuilderPaginator extends DoctrineAdapter
      * @param QueryBuilder $queryBuilder
      * @param null $where
      * @param null $sort
-     * @param null $order
+     * @param null $orderBy
      * @param null $group
      * @param null $having
      */
-    public function __construct(
-        QueryBuilder $queryBuilder,
-        $where = null,
-        $sort = null,
-        $order = null,
-        $group = null,
-        $having = null
-    ) {
-
+    public function __construct(QueryBuilder $queryBuilder, $where = null, $sort = null, $orderBy = null, $group = null, $having = null)
+    {
         if ($where) {
-            $queryBuilder->where($where);
+
+            /**
+             * @var string $field
+             * @var mixed $value
+             */
+            foreach ($where as $field => $value) {
+                $queryBuilder->where(
+                    $queryBuilder->expr()->eq($field, $value)
+                );
+            }
         }
 
-        if ($sort) {
-            $queryBuilder->orderBy($sort, $order);
+        if ($orderBy) {
+
+            /**
+             * @var string $sort
+             * @var string $order
+             */
+            foreach ($orderBy as $sort => $order) {
+                $queryBuilder->orderBy($sort, $order);
+            }
         }
 
         if ($group) {

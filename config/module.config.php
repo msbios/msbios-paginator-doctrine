@@ -7,14 +7,5 @@
 namespace MSBios\Paginator\Doctrine;
 
 return [
-
-    'service_manager' => [
-        'factories' => [
-            // ...
-        ]
-    ],
-
-    Module::class => [
-        // ...
-    ]
+    // ...
 ];

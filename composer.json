@@ -24,10 +24,10 @@
     }
   },
   "require": {
-    "zendframework/zend-paginator": "^2.8",
-    "msbios/doctrine": "^1.0"
+    "zendframework/zend-paginator": "^2.8"
   },
   "require-dev": {
+    "msbios/doctrine": "^1.0",
     "msbios/debug": "^1.0",
     "msbios/test": "^1.0"
   },

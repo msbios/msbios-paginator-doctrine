@@ -19,13 +19,17 @@ class QueryBuilderPaginator extends DoctrineAdapter
      * QueryBuilderPaginator constructor.
      * @param QueryBuilder $queryBuilder
      * @param null $where
-     * @param null $sort
      * @param null $orderBy
      * @param null $group
      * @param null $having
      */
-    public function __construct(QueryBuilder $queryBuilder, $where = null, $sort = null, $orderBy = null, $group = null, $having = null)
-    {
+    public function __construct(
+        QueryBuilder $queryBuilder,
+        $where = null,
+        $orderBy = null,
+        $group = null,
+        $having = null
+    ) {
         if ($where) {
 
             /**
